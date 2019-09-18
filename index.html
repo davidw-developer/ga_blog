@@ -11,7 +11,7 @@ layout: default
 	<article class="post">
 		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 		<!-- <p> {{ post.date | date: "%b %-d, %Y" }}</p> -->
-		<p>[ {{ post.date | date: "%b %-d, %Y" }} ] &nbsp; {{ post.excerpt }}</p>
+		<p>{{ post.date | date: "%b %-d, %Y" }} - {{ post.excerpt }}</p>
 	</article>
 {% endfor %}
 
