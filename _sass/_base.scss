@@ -1,18 +1,41 @@
-// $content-width: 800px;
-// $main: #19CCAA;
-// $font-style: 'Open Sans', sans-serif;
-// $font-color: #262626;
-// $link-color: #425469;
-// $link-hover-color: $main;
-// $heading-font: 'Muli', sans-serif;
-// $heading-font-color: #425469;
-// $light: #E7EDF4;
-// $header:  #1D1425;
-
-// *,
-// *::before,
-// *::after {
-// 	-webkit-box-sizing: border-box;
-// 	-moz-box-sizing: border-box;
-// 	box-sizing: border-box;
-// } 
+#site {
+	max-width: 45em;
+	margin-left: auto;
+	margin-right: auto;
+	padding:0.5em 1em;
+}
+a {
+	color: #800;
+	border-bottom: 1px solid #800;
+	text-decoration: none;
+}
+header h1 {
+	font-size:1.22em;
+	margin-bottom: 1.5em;
+}
+header a {
+	// border-bottom: 4px solid #800;
+}
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, georgia,serif;
+	line-height:1.55;
+	font-size:1.05em;
+	color:#444;
+}
+h1,h2,h3{
+	line-height:1.35;
+	font-family: Tahoma, Verdana, sans-serif;
+	font-weight: 600;
+}
+.post {
+	padding:0;
+	margin-top: 1.6em;
+	margin-bottom: 1.6em;
+	h2 {
+		margin:0;
+	}
+}
+footer {
+	padding-top: 0.1em;
+	padding-bottom: 0.1em;
+}
