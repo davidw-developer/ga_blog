@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+  <h1>Home Page</h1>
+
+  Main content goes here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, repudiandae. Nihil laborum perferendis molestiae, doloremque rem quae id assumenda, molestias blanditiis quibusdam cupiditate veniam eos error ducimus optio quas, excepturi.
+
+  <ul>
+  	<li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
+	{% for page in site.pages %} {% if page.title %}
+	<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+	{% endif %} {% endfor %}
+  </ul>

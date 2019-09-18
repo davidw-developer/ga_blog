@@ -1,0 +1,13 @@
+# Site Settings
+title: David Walker
+email: davidw1427@gmail.com
+description: >
+  Musings of a web developer.
+baseurl: "ga_blog"  
+url: ""
+# Build Settings
+sass:
+  sass_dir: _sass
+include: ['_pages']
+kramdown:
+  input: GFM
