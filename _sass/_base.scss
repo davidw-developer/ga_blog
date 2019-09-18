@@ -6,20 +6,24 @@
 }
 a {
 	color: #800;
-	border-bottom: 1px solid #800;
+	// border-bottom: 1px solid #800;
 	text-decoration: none;
+}
+header {
+	// border-bottom: 2px solid #ddd; 
+	margin-bottom: 1.5em;
 }
 header h1 {
 	font-size:1.22em;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 header a {
 	// border-bottom: 4px solid #800;
 }
 body{
 	font-family: "Helvetica Neue", Helvetica, Arial, georgia,serif;
-	line-height:1.55;
-	font-size:1.05em;
+	line-height:1.5;
+	font-size:1.1em;
 	color:#444;
 }
 h1,h2,h3{
@@ -36,6 +40,7 @@ h1,h2,h3{
 	}
 }
 footer {
-	padding-top: 0.1em;
+	// border-top: 2px solid #ddd; 
+	margin-top: 2em;
 	padding-bottom: 0.1em;
 }

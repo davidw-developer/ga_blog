@@ -6,11 +6,12 @@ layout: default
 
 <p>I intend to keep my corner of the web intentionally minimal - free from ads, annoying pop ups or distracting animations- but full of useful information, where I blog about web development related topics.</p>
 
+<h2>Latest Articles</h2>
 {% for post in site.posts %}
 	<article class="post">
-		<h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-		<p>🗓️ {{ post.date | date: "%b %-d, %Y" }}</p>
-		<p>{{ post.excerpt }}</p>
+		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+		<!-- <p> {{ post.date | date: "%b %-d, %Y" }}</p> -->
+		<p>[ {{ post.date | date: "%b %-d, %Y" }} ] &nbsp; {{ post.excerpt }}</p>
 	</article>
 {% endfor %}
 
