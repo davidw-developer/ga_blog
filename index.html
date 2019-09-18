@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<h1>Hello and welcome 👋</h1>
-<p>Hi, I'm David, a Web Developer based in Cambridge, UK. I have been hand-crafting websites for a wide range of sectors including start-ups, education, biotech and non-profit for over 7 years now.</p>
+<h1>Good evening! 🌙 I'm a Web Developer based in Cambridge, UK.</h1>
+<p>With over 7 years experience, I have hand-crafted websites for a wide range of sectors including start-ups, education, biotech and non-profit.</p>
 
 <p>I intend to keep my corner of the web intentionally minimal - free from ads, annoying pop ups or distracting animations- but full of useful information, where I blog about web development related topics.</p>
 
@@ -11,7 +11,7 @@ layout: default
 	<article class="post">
 		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 		<!-- <p> {{ post.date | date: "%b %-d, %Y" }}</p> -->
-		<p>{{ post.date | date: "%b %-d, %Y" }} - {{ post.excerpt }}</p>
+		<p>{{ post.excerpt }} ({{ post.date | date: "%b %-d, %Y" }})</p>
 	</article>
 {% endfor %}
 
