@@ -1,0 +1,72 @@
+I"c<h2 id="introduction-to-rsync">Introduction to rsync</h2>
+
+<p>Let’s say you have lots of identical files on your computer, and you need to make a change to one of the files. You normally might have to spend a long time opening up each file and copying your changes.</p>
+
+<p>Rsync is a handy little utility tool which can help you sync and copy the contents of a folder into another folder in one easy command.</p>
+
+<p>Initially released back in 1996, You can usually find pre-installed on most systems, but more likely on Mac and Linux.</p>
+
+<p>To double check it’s installed, just open your Terminal app and type:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -v
+</code></pre></div></div>
+
+<p>Rsync uses the following easy to remember command structure:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -[OPTIONS] [SOURCE FILE PATH] [DESTINATION PATH]
+</code></pre></div></div>
+<hr />
+
+<h2 id="some-available-options">Some available Options</h2>
+<ul>
+  <li><code class="highlighter-rouge">-r</code> : means recursive - you recurse the command into directories.</li>
+  <li><code class="highlighter-rouge">-a</code> : archive - useful for backups - preserves file information (such as time stamps and permissions ect).</li>
+</ul>
+
+<h2 id="basic-example-terminal-one-liner">Basic example: Terminal one liner</h2>
+
+<p>You can copy one folder into another by opening your Terminal App and writing:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -r /path/to/src_folder /path/to/dest_folder
+</code></pre></div></div>
+
+<p>Note that the above example would would copy the folder <code class="highlighter-rouge">src_folder</code> <em>INTO</em> the folder <code class="highlighter-rouge">dest_folder</code>, so you’d end up with a folder structure like this: <code class="highlighter-rouge">dest_folder/src_folder</code>.</p>
+
+<hr />
+
+<h2 id="copy-only-the-contents-of-a-folder-terminal-one-liner">Copy only the contents of a folder: Terminal one liner</h2>
+
+<p>In order to copy the <em>contents</em> of <code class="highlighter-rouge">src_folder</code> into <code class="highlighter-rouge">dest_folder</code>, you need to add a forward slash onto the end of your <code class="highlighter-rouge">src_folder</code> path (but not onto the <code class="highlighter-rouge">dest_folder</code>):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -r /path/to/src_folder/ /path/to/dest_folder
+</code></pre></div></div>
+
+<h2 id="how-to-run-multiple-rsync-commands-inside-a-shell-script">How to run multiple rsync commands inside a shell script</h2>
+
+<p>Let’s say you have multiple rsync commands you want to run, but don’t want to keep copying and pasting them into the terminal every time.</p>
+
+<p>You can create a shell script with multiple commands.</p>
+
+<p>Open a code editor and enter the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+rsync <span class="nt">-r</span> /path/to/src_folder1/ /path/to/dest_folder1
+rsync <span class="nt">-r</span> /path/to/src_folder2/ /path/to/dest_folder2
+rsync <span class="nt">-r</span> /path/to/src_folder3/ /path/to/dest_folder3
+</code></pre></div></div>
+
+<p>Obviously the paths would be changed to meet your requirements.</p>
+
+<p>The line at the top <code class="highlighter-rouge"><span class="c">#!/bin/bash</span></code> is known as the shebang line.</p>
+
+<p>Save the file with the <code class="highlighter-rouge">.sh</code> extension.</p>
+
+<p>In order to run the shell script, you can usually just open up Terminal and type <code class="highlighter-rouge">sh</code> (space) followed by the shell script path. You can do this by dragging and dropping the shell script into the terminal and it will auto populate the path.</p>
+
+<p>Example:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sh /path/to/file.sh
+</code></pre></div></div>
+
+<p>If you run into errors, check the file is executable by running the following command in terminal:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod +x /path/to/shellscript.sh
+</code></pre></div></div>
+
+<p>This article gives only a very basic overview of rsync, however much more advanced capabilities are also available.</p>
+:ET

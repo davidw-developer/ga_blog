@@ -1,6 +1,4 @@
-I"�<h1 id="simple-guide-to-copying-folders-using-rsync">Simple guide to copying folders using rsync</h1>
-
-<h2 id="introduction-to-rsync">Introduction to rsync</h2>
+I"[<h2 id="introduction-to-rsync">Introduction to rsync</h2>
 
 <p>Let’s say you have lots of identical files on your computer, and you need to make a change to one of the files. You normally might have to spend a long time opening up each file and copying your changes.</p>
 
@@ -23,8 +21,6 @@
   <li><code class="highlighter-rouge">-a</code> : archive - useful for backups - preserves file information (such as time stamps and permissions ect).</li>
 </ul>
 
-<hr />
-
 <h2 id="basic-example-terminal-one-liner">Basic example: Terminal one liner</h2>
 
 <p>You can copy one folder into another by opening your Terminal App and writing:</p>
@@ -32,8 +28,6 @@
 </code></pre></div></div>
 
 <p>Note that the above example would would copy the folder <code class="highlighter-rouge">src_folder</code> <em>INTO</em> the folder <code class="highlighter-rouge">dest_folder</code>, so you’d end up with a folder structure like this: <code class="highlighter-rouge">dest_folder/src_folder</code>.</p>
-
-<hr />
 
 <h2 id="copy-only-the-contents-of-a-folder-terminal-one-liner">Copy only the contents of a folder: Terminal one liner</h2>
 

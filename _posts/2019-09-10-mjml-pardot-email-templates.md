@@ -56,17 +56,15 @@ In Pardot, there are several different types of Pardot Regions. Here is a brief 
 </code> 
  ```
 
- ### Repeatable (Email only)
- ```
+### Repeatable (Email only)
+```
 pardot-repeatable="name-of-section"
- ```
+```
 
- ### Removable (Email only)
- ```
+### Removable (Email only)
+```
 pardot-removable="name-of-section"
- ```
-
- ---
+```
 
 ## How to add Pardot Regions into MJML Templates
 

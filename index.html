@@ -1,19 +1,20 @@
 ---
 layout: default
 ---
-<h1>Good evening! 🌙 I'm a Web Developer based in Cambridge, UK.</h1>
-<p>With over 7 years experience, I have hand-crafted websites for a wide range of sectors including start-ups, education, biotech and non-profit.</p>
+<p>Hello! I'm a Web Developer based in Cambridge, UK. With over 7 years experience, I have hand-crafted websites for a wide range of sectors including start-ups, education, biotech and non-profit.</p>
 
 <p>I intend to keep my corner of the web intentionally minimal - free from ads, annoying pop ups or distracting animations- but full of useful information, where I blog about web development related topics.</p>
 
-<h2>Latest Articles</h2>
-{% for post in site.posts %}
-	<article class="post">
-		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-		<!-- <p> {{ post.date | date: "%b %-d, %Y" }}</p> -->
-		<p>{{ post.excerpt }} ({{ post.date | date: "%b %-d, %Y" }})</p>
-	</article>
-{% endfor %}
+<div class="articles">
+	<h2>Latest Articles</h2>
+	{% for post in site.posts %}
+		<article class="post">
+			<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+			<!-- <p> {{ post.date | date: "%b %-d, %Y" }}</p> -->
+			<p>{{ post.excerpt }} ({{ post.date | date: "%b %-d, %Y" }})</p>
+		</article>
+	{% endfor %}	
+</div>
 
 <!--   <h2><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></h2>
   <p></p>

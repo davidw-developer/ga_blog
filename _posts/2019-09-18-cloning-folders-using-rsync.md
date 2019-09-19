@@ -23,13 +23,10 @@ Rsync uses the following easy to remember command structure:
 ```
 rsync -[OPTIONS] [SOURCE FILE PATH] [DESTINATION PATH]
 ```
----
 
 ## Some available Options
 -   `-r` : means recursive - you recurse the command into directories.
 - `-a` : archive - useful for backups - preserves file information (such as time stamps and permissions ect).
-
----
 
 ## Basic example: Terminal one liner
 
@@ -39,8 +36,6 @@ rsync -r /path/to/src_folder /path/to/dest_folder
 ```
 
 Note that the above example would would copy the folder `src_folder` *INTO* the folder `dest_folder`, so you'd end up with a folder structure like this: `dest_folder/src_folder`.
-
----
 
 ## Copy only the contents of a folder: Terminal one liner
 
