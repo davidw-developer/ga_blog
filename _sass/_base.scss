@@ -1,43 +1,126 @@
 body {
-	font-size: 1.04em;
-	line-height: 1.48;
-	color:#000;
-	border-top: 5px solid #C9203C;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+	color: #0b0c0c;
+	font-size: 1.15em;
+	line-height: 1.4;
 	margin:0;
-	font-family: helvetica,arial;
 }
-h1,h2,h3 {
-	font-family: 'Noto Serif', serif;
-	line-height: 1.19;
-	color: #C9203C;
+
+.header {
+	box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #e2e2e2;
+	padding:0.9em 0;
+	position: relative;
+	h1 {
+		margin:0;
+		line-height: 1;
+		font-size: 25px;
+		font-weight: normal;	
+		a {
+			color:#000;
+			// color: #005EB8;
+			text-decoration: none;
+		}
+	}
 }
-h2 {
-	margin-top: 32px;
-}
-h3 {
-	margin-top: 32px;
-}
-a {
-	color:#000;
-	// color: #C9203C;
-	border-bottom: 1px solid #000;
-	text-decoration: none;
-}
-#header h1 {
-	margin-top: 25px;
-	margin-bottom: 32px;
-	// text-transform: uppercase;
-	font-size:150%;
-	// letter-spacing: 0.04em;
-}
-.container {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 45em;
+
+.header-measure,
+.heading-measure,
+.content-measure,
+.footer-measure {
+	max-width: 43em;
+	margin:auto;
 	padding-left: 1em;
 	padding-right: 1em;
 }
-#footer {
-	padding-top: 5px;
+
+.header-measure {
+	display: flex;
+}
+nav {
+	margin-left: auto;
+	padding-left: 1em;
+	ul {
+		list-style: none;
+		margin:0;
+		padding:0;
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+.heading {
+	background:#F5F5F5;
+	padding:1.7em 0 2.1em 0;
+}
+.heading-content {
+	// max-width: 35em;
+}
+.heading-title {
+	margin:0;
+	font-size: 205%;
+}
+.heading-text {
+	margin-bottom: 0;
+}
+
+.article-list {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+.article-list__item {
+	margin:1.3em 0;
+	article {
+		// background: #F5F5F5;
+		box-shadow: 2px 0px 7px rgba(0, 0, 0, 0.1);
+		border:1px solid #e2e2e2;
+		padding:1em;
+	}
+	time {
+		color: #545454;
+	}
+	h3 {
+		margin:0 0 0.5em 0;
+		font-size:125%;
+	}
+	p {
+		margin:0.8em 0 0 0;
+	}
+}
+
+// Code Blocks
+div.highlight {
+	background:#0b0c0c;
+	color:#fff;
+	padding:0.5em 1em;
+}
+.highlighter-rouge {
+	background:#eee;
+	padding:2px;
+}
+
+main, footer {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.content {
+	padding-top: 0.7em;
+	padding-bottom: 1em;
+}
+
+h1,h2,h3 {
+	font-weight: 500;
+	line-height: 1.2;
+}
+a {
+	color: #005EB8;
+}
+
+footer {
+	background:#F5F5F5;
+	padding-top: 1em;
 	padding-bottom: 1em;
 }

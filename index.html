@@ -1,20 +1,28 @@
 ---
 layout: default
 ---
-<div class="container">
-	<h1>This website is plain on purpose.</h1>
-	<p>Hello! I'm a Web Developer based in Cambridge, UK. With over 7 years experience, I have hand-crafted websites for a wide range of sectors including start-ups, education, biotech and non-profit.</p>
+<div class="heading">
+	<div class="heading-measure">
+		<div class="heading-content">
+			<h1 class="heading-title">Hello and welcome! I'm David, a web developer based in Cambridge, UK.</h1>
+			<p class="heading-text">On this little corner of the web you will find no adverts, no annoying popups, no motion sickness inducing animations or intrusive scroll-jacking. I intend to keep this website intentionally clean and simple, accessibility friendly and packed full of useful content on web development related topics.</p>
+		</div>
+	</div>
+</div>
 
-	<p>I intend to keep my corner of the web intentionally minimal - free from ads, annoying pop ups or distracting animations- but full of useful information, where I blog about web development related topics.</p>
-
-	<div class="articles">
+<div class="content">
+	<div class="content-measure">
 		<h2>Latest Articles</h2>
-		{% for post in site.posts %}
-			<article class="post">
-				<h3>{{ post.date | date: "%b %-d, %Y" }} - <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-				<!-- <p> {{ post.date | date: "%b %-d, %Y" }}</p> -->
-				<p>{{ post.excerpt }} ({{ post.date | date: "%b %-d, %Y" }})</p>
-			</article>
-		{% endfor %}	
+		<ul class="article-list">
+			{% for post in site.posts %}
+			<li class="article-list__item">
+				<article>
+					<h3><a href="{{ post.url | prepend: site.baseurl }}/">{{ post.title }}</a></h3>
+					<time>{{ post.date | date: "%b %-d, %Y" }}</time>
+					<p>{{ post.excerpt }}</p>
+				</article>
+			</li>
+			{% endfor %}	
+		</ul>
 	</div>
 </div>
