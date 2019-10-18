@@ -12,7 +12,7 @@ Let's say you have lots of identical files on your computer, and you need to mak
 
 Rsync is a handy little utility tool which can help you sync and copy the contents of a folder into another folder in one easy command.
 
-Initially released back in 1996, You can usually find pre-installed on most systems, but more likely on Mac and Linux. 
+Initially released back in 1996, You can usually find pre-installed on Mac and Linux. 
 
 To double check it's installed, just open your Terminal app and type:
 ```
