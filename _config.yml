@@ -4,7 +4,7 @@ email: davidw1427@gmail.com
 description: >
   Musings of a web developer.
 baseurl: "/ga_blog"  
-url: "davidw-developer.github.io/ga_blog"
+url: ""
 # Build Settings
 sass:
   sass_dir: _sass
