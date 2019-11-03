@@ -19,7 +19,7 @@ To double check it's installed, just open your Terminal app and type:
 rsync -v
 ```
 
-Rsync uses the following easy to remember command structure:
+Rsync commands use the following easy to remember structure:
 ```
 rsync -[OPTIONS] [SOURCE FILE PATH] [DESTINATION PATH]
 ```

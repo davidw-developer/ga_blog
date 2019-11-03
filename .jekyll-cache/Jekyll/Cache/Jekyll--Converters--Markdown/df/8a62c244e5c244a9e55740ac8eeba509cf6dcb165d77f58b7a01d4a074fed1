@@ -1,16 +1,16 @@
-I"T<h2 id="introduction-to-rsync">Introduction to rsync</h2>
+I"3<h2 id="introduction-to-rsync">Introduction to rsync</h2>
 
 <p>Let’s say you have lots of identical files on your computer, and you need to make a change to one of the files. You normally might have to spend a long time opening up each file and copying your changes.</p>
 
 <p>Rsync is a handy little utility tool which can help you sync and copy the contents of a folder into another folder in one easy command.</p>
 
-<p>Initially released back in 1996, You can usually find pre-installed on most systems, but more likely on Mac and Linux.</p>
+<p>Initially released back in 1996, You can usually find pre-installed on Mac and Linux.</p>
 
 <p>To double check it’s installed, just open your Terminal app and type:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -v
 </code></pre></div></div>
 
-<p>Rsync uses the following easy to remember command structure:</p>
+<p>Rsync commands use the following easy to remember structure:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -[OPTIONS] [SOURCE FILE PATH] [DESTINATION PATH]
 </code></pre></div></div>
 
