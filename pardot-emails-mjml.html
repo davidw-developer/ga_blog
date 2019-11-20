@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <link rel="stylesheet" href="enhancements/css/styles.css"> -->
+<title>Creating Pardot Email Templates using MJML - David Walker</title>
+<style>
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, arial, helvetica, "Helvetica Neue", sans-serif;
+		line-height: 1.3;
+		font-size:107%;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;	
+	}
+	pre {
+		background:#ccc;
+		color:#000;
+		padding:10px;
+		overflow-y: scroll;
+	}
+</style>
+</head>
+<body vlink="#000000" text="#000000" link="#000000" bgcolor="#fbfbfb" alink="#000000">
+	<center>	
+	<table border="0" width="700px" align="center">
+	<tr>
+	<td>
+	<header role="banner">
+	<h1><a href="index.html">David Walker</a></h1>
+	</header>
+	<main class="content">
+	<h1 id="creating-pardot-email-templates-using-mjml">Creating Pardot Email Templates using MJML</h1>
+<p>There are some special considerations which must be made when using <a href="https://mjml.io/">MJML</a> in conjunction with <a href="https://www.pardot.com/">Pardot</a>.</p>
+<h2 id="how-to-make-an-template-editable-in-pardot">How to make an template editable in Pardot</h2>
+<p>In order to make parts of an email template editable in Pardot you need to attach <code>pardot-region</code> attributes to HTML tags.</p>
+<p>A typical Pardot Region might look something like this:</p>
+<pre><code>&lt;p pardot-region=&quot;editable-paragraph&quot;&gt;Some text&lt;/p&gt;</code></pre>
+<p>You can enter any name you like into your pardot region- but the naming structure must obey css class naming rules - in other words, you cannot have spaces between words!</p>
+<h2 id="pardot-region-types">Pardot Region Types</h2>
+<p>In Pardot, there are several different types of Pardot Regions. Here is a brief overview of some of the most popular types:</p>
+<h3 id="link">Link</h3>
+<pre><code>&lt;a href=&quot;#&quot; pardot-region=&quot;editable-link&quot; pardot-region-type=&quot;link&quot;&gt;My Link&lt;/a&gt;</code></pre>
+<h3 id="image">Image</h3>
+<pre><code>&lt;img src=&quot;image.jpg&quot; pardot-region=&quot;editable-image&quot; pardot-region-type=&quot;image&quot;&gt;</code></pre>
+<h3 id="simple-plain-text-editor">Simple / Plain Text Editor</h3>
+<pre><code>&lt;p pardot-region=&quot;simple-text&quot; pardot-region-type=&quot;simple&quot;&gt;Your text here&lt;/p&gt;</code></pre>
+<h3 id="basic-editor">Basic Editor</h3>
+<pre><code>&lt;div pardot-region=&quot;pardot-basic&quot; pardot-region-type=&quot;basic&quot;&gt;&lt;h3&gt;My Header&lt;/h3&gt;&lt;/div&gt;</code></pre>
+<h3 id="wysiwyg-editor">WYSIWYG Editor</h3>
+<pre><code>&lt;div pardot-region=&quot;pardot&quot; pardot-region-type=&quot;pardot&quot;&gt;&lt;h3&gt;My Header&lt;/h3&gt;&lt;/div&gt;</code></pre>
+<h3 id="html">HTML</h3>
+<pre><code>&lt;code pardot-region=&quot;editable-html&quot; pardot-region-type=&quot;html&quot;&gt; 
+    &lt;p&gt;This is some code&lt;/p&gt;
+&lt;/code&gt; </code></pre>
+<h3 id="repeatable-email-only">Repeatable (Email only)</h3>
+<pre><code>pardot-repeatable=&quot;name-of-section&quot;</code></pre>
+<h3 id="removable-email-only">Removable (Email only)</h3>
+<pre><code>pardot-removable=&quot;name-of-section&quot;</code></pre>
+<h2 id="how-to-add-pardot-regions-into-mjml-templates">How to add Pardot Regions into MJML Templates</h2>
+<p>If you are using MJML, you may be tempted to try adding your pardot region attributes to the MJML tags themselves, for example:</p>
+<pre><code>&lt;mj-image src=&quot;path/to/image.jpg&quot; pardot-region=&quot;my-image-region&quot; /&gt;</code></pre>
+<p>However, if you try to attach <code>pardot-region</code> attributes to MJML tags like this, it will NOT work because <strong>MJML does not recognise Pardot region attributes.</strong></p>
+<p>When you try to transpile the MJML into HTML, it will throw an error because the pardot attribute is not supported.</p>
+<p>The solution is to avoid using many of the MJML component tags such as: - <code>&lt;mj-image&gt;</code> - <code>&lt;mj-button&gt;</code> - <code>&lt;mj-social&gt;</code></p>
+<p>And instead use MJTML tags which will allow you to nest raw HTML inside of them.</p>
+<p>Two tags which accept raw HTML input are: - <code>&lt;mj-text&gt;</code> - <code>&lt;mj-raw&gt;</code></p>
+<p>This will then allow you to add HTML for editable buttons, images and text <em>inside</em> these MJML tags.</p>
+<p>For example, the way to create an editable image using Pardot regions would be:</p>
+<pre><code>&lt;mj-text&gt;
+    &lt;img pardot-region=&quot;editable-image&quot; pardot-region-type=&quot;image&quot;&gt;
+&lt;/mj-text&gt;</code></pre>
+<p>If you wanted to create an editable button, the <code>&lt;mj-button&gt;</code> tag is not a good idea, because you would not be able to use <code>&lt;mj-button pardot-region="editable-button"&gt;</code> since MJML does not regonise pardot attributes.</p>
+<p>The better solution would be to nest a button inside <code>&lt;mj-text&gt;</code> e.g. </p>
+<pre><code>&lt;mj-text&gt;
+    &lt;a href=&quot;#&quot; class=&quot;button&quot; pardot-region=&quot;editable-button&quot;&gt;
+&lt;/mj-text&gt;</code></pre>
+<p>The same also applies to <code>&lt;mj-social&gt;</code> tags. It is better to create the social icons using HTML code and then insert that code inside the <code>&lt;mj-raw&gt;</code> tags.</p>
+<p>Originally written: 7th September 2019</p>
+		<p><a href="index.html">Return to homepage</a></p>
+		</main>
+	<footer>
+	<p><em>&copy; David Walker 2019. No ads, no popups, no frameworks, no <a href="http://deathtobullshit.com/" target="_blank">bullshit</a>.</em></p>
+	</footer>
+	</td>
+	</tr>
+	</table>
+	</center>
+</body>
+</html> 

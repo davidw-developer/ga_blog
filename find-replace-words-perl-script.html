@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <link rel="stylesheet" href="enhancements/css/styles.css"> -->
+<title>Finding and replacing words using a Perl script - David Walker</title>
+<style>
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, arial, helvetica, "Helvetica Neue", sans-serif;
+		line-height: 1.3;
+		font-size:107%;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;	
+	}
+	pre {
+		background:#ccc;
+		color:#000;
+		padding:10px;
+		overflow-y: scroll;
+	}
+</style>
+</head>
+<body vlink="#000000" text="#000000" link="#000000" bgcolor="#fbfbfb" alink="#000000">
+	<center>	
+	<table border="0" width="700px" align="center">
+	<tr>
+	<td>
+	<header role="banner">
+	<h1><a href="index.html">David Walker</a></h1>
+	</header>
+	<main class="content">
+	<h1 id="finding-and-replacing-words-using-a-perl-script">Finding and replacing words using a Perl script</h1>
+<p>Problem: You need to loop through a text file and replace all instances of an old word, with a new word.</p>
+<p>You could of course open the file up, wait for the application to load, and manually find &amp; replace.</p>
+<p>Or, you could utilise the power of a simple Perl script.</p>
+<h2 id="perl-one-liner-to-find-replace-word-in-a-file">Perl one liner to find &amp; replace word in a file</h2>
+<p>The following “one liner” can be directly used in Terminal (in MacOS or Linux):</p>
+<pre><code>perl -pi -w -e &#39;s/old-word/new-word/g;&#39; /absolute/path/to/folder/file.html</code></pre>
+<p>The above example would replace all instances of “old-word” with “new-word” in “file.html”.</p>
+<p>The <code>/g</code> tells Perl to perform this operation “globally” - in other words, on the entire file.</p>
+<h2 id="multiple-commands-in-a-bash-script">Multiple commands in a bash script</h2>
+<p>If you need to update multiple files, you could execute this command several times, in a shell script.</p>
+<p>Simply create a file that ends in the <code>.sh</code> file extension. e.g. <code>replace.sh</code> and populate it like so:</p>
+<pre><code>#!/bin/bash
+perl -pi -w -e &#39;s/old-word/new-word/g;&#39; /absolute/path/to/folder/file.html
+perl -pi -w -e &#39;s/old-word/new-word/g;&#39; /absolute/path/to/folder/file2.html
+perl -pi -w -e &#39;s/old-word/new-word/g;&#39; /absolute/path/to/folder/file3.html</code></pre>
+<p>Originally written: 7th November 2019</p>
+		<p><a href="index.html">Return to homepage</a></p>
+		</main>
+	<footer>
+	<p><em>&copy; David Walker 2019. No ads, no popups, no frameworks, no <a href="http://deathtobullshit.com/" target="_blank">bullshit</a>.</em></p>
+	</footer>
+	</td>
+	</tr>
+	</table>
+	</center>
+</body>
+</html> 

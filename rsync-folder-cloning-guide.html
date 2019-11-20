@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- <link rel="stylesheet" href="enhancements/css/styles.css"> -->
+<title>Simple guide to copying folders using rsync - David Walker</title>
+<style>
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, arial, helvetica, "Helvetica Neue", sans-serif;
+		line-height: 1.3;
+		font-size:107%;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;	
+	}
+	pre {
+		background:#ccc;
+		color:#000;
+		padding:10px;
+		overflow-y: scroll;
+	}
+</style>
+</head>
+<body vlink="#000000" text="#000000" link="#000000" bgcolor="#fbfbfb" alink="#000000">
+	<center>	
+	<table border="0" width="700px" align="center">
+	<tr>
+	<td>
+	<header role="banner">
+	<h1><a href="index.html">David Walker</a></h1>
+	</header>
+	<main class="content">
+	<h1 id="a-simple-way-to-bulk-clone-folders-using-rsync">A simple way to bulk clone folders using rsync</h1>
+<p>Let’s say you have lots of identical files on your computer, and you need to make a change to one of the files. You normally might have to spend a long time opening up each file and copying your changes.</p>
+<p>Rsync is a handy little utility tool which can help you sync and copy the contents of a folder into another folder in one easy command.</p>
+<p>Initially released back in 1996, You can usually find pre-installed on Mac and Linux.</p>
+<p>To double check it’s installed, just open your Terminal app and type:</p>
+<pre><code>rsync -v</code></pre>
+<p>Rsync commands use the following easy to remember structure:</p>
+<pre><code>rsync -[OPTIONS] [SOURCE FILE PATH] [DESTINATION PATH]</code></pre>
+<h2 id="some-available-options">Some available Options</h2>
+<ul>
+<li><code>-r</code> : means recursive - you recurse the command into directories.</li>
+<li><code>-a</code> : archive - useful for backups - preserves file information (such as time stamps and permissions ect).</li>
+</ul>
+<h2 id="basic-example-terminal-one-liner">Basic example: Terminal one liner</h2>
+<p>You can copy one folder into another by opening your Terminal App and writing:</p>
+<pre><code>rsync -r /path/to/src_folder /path/to/dest_folder</code></pre>
+<p>Note that the above example would would copy the folder <code>src_folder</code> <em>INTO</em> the folder <code>dest_folder</code>, so you’d end up with a folder structure like this: <code>dest_folder/src_folder</code>.</p>
+<h2 id="copy-only-the-contents-of-a-folder-terminal-one-liner">Copy only the contents of a folder: Terminal one liner</h2>
+<p>In order to copy the <em>contents</em> of <code>src_folder</code> into <code>dest_folder</code>, you need to add a forward slash onto the end of your <code>src_folder</code> path (but not onto the <code>dest_folder</code>):</p>
+<pre><code>rsync -r /path/to/src_folder/ /path/to/dest_folder</code></pre>
+<h2 id="how-to-run-multiple-rsync-commands-inside-a-shell-script">How to run multiple rsync commands inside a shell script</h2>
+<p>Let’s say you have multiple rsync commands you want to run, but don’t want to keep copying and pasting them into the terminal every time.</p>
+<p>You can create a shell script with multiple commands.</p>
+<p>Open a code editor and enter the following:</p>
+<pre><code>#!/bin/bash
+
+rsync -r /path/to/src_folder1/ /path/to/dest_folder1
+rsync -r /path/to/src_folder2/ /path/to/dest_folder2
+rsync -r /path/to/src_folder3/ /path/to/dest_folder3</code></pre>
+<p>Obviously the paths would be changed to meet your requirements.</p>
+<p>The line at the top <code>#!/bin/bash</code> is known as the shebang line.</p>
+<p>Save the file with the <code>.sh</code> extension.</p>
+<p>In order to run the shell script, you can usually just open up Terminal and type <code>sh</code> (space) followed by the shell script path. You can do this by dragging and dropping the shell script into the terminal and it will auto populate the path.</p>
+<p>Example:</p>
+<pre><code>sh /path/to/file.sh</code></pre>
+<p>If you run into errors, check the file is executable by running the following command in terminal:</p>
+<pre><code>chmod +x /path/to/shellscript.sh</code></pre>
+<p>This article gives only a very basic overview of rsync, however much more advanced capabilities are also available.</p>
+<p>Originally written: 17th September 2019</p>
+		<p><a href="index.html">Return to homepage</a></p>
+		</main>
+	<footer>
+	<p><em>&copy; David Walker 2019. No ads, no popups, no frameworks, no <a href="http://deathtobullshit.com/" target="_blank">bullshit</a>.</em></p>
+	</footer>
+	</td>
+	</tr>
+	</table>
+	</center>
+</body>
+</html> 

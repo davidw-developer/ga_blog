@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>BCR Architects Case Study | David Walker - Front End Web Developer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#000000" />
+	<meta name="author" content="David Walker">
+	<meta name="description" content="David Walker is a Lead Front End Developer based in Cambridge, UK who builds robust, simple and user-wise websites.">
+	<link rel="icon" href="favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="styles/grid.css">
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+	<header>
+		<div class="header__inner">
+			<div class="container">
+				<div class="row">
+					<div class="grid_12">
+						<p class="header__logo"><a href="index.html">David Walker</a></p>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<main>
+		<div class="intro">
+			<div class="container">
+				<div class="row">
+					<div class="grid_9">
+						<h1 class="page-header__title">BCR Architects Case Study.</h1>
+						<p class="page-header__sumary">The new <a href="https://www.bcr-infinityarchitects.co.uk/" target="_blank">BCR Infinity Architects website</a> design aims to merge two brands into one to create a unified, clean and minimalist look, and focusses on presenting information about the company such as team members, news and showcasing a large number of projects which are filterable by Javascript powered toggles.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="grid_12">
+						<h2>Craft CMS Integration</h2>
+						<p>We integrated the new website into Craft CMS, which has proven repeatedly to be a favourite among many of our clients due to its clean and user friendly interface.</p>
+
+
+						<h2>Hand Crafted SVG Animations</h2>
+						<p>BCR Infinity Architects used an internal designer to create a compelling illustrated graphic for the new website homepage. The idea of the graphic was to act as a landscape representation of the different architectural projects BCR have worked on and also allow website users to interact and click on various buildings to take them to a case study profile.</p>
+
+						<img src="images/bcr.jpg" alt="">
+						<p>As with any animated, interactive element we work on, Chameleon began with a detailed planning phase- to map out step by step what the animation needs to do when the website is loaded, what parts of the animated element are clickable, and which areas have ongoing animations.</p>
+
+						<p>We divided the homepage animation up into a series of layers- which would slide up and fade in on page load, and defined some clickable “hot spots”.</p>
+
+						<p>Once the planning and discussion phase was completed, the illustration was neatly organised within illustrator- giving each layer a unique ID name, and removing any unnecessary “bloat” - in order to ensure fast page loading speeds and smaller file sizes.</p>
+
+						<p>The first task with the animation was to get the layers in place and have them animated in- one at a time. CSS transforms and animations were used to transition each layer in one at a time, before adding in the graphical elements.</p>
+
+						<p>Using SVG shapes, the various central axis points and coordinates were then manually plotted, to then achieve “to and from” animated elements. In our case- we added spinning wind turbines, moving cranes and a moving tractor- using the native SVG animate element.</p>
+
+						<p>Finally, various buildings were then linked to case studies, using XLINK inside the SVG.</p>	
+
+						<h2>View live website</h2>
+						<p>You can visit the BCR website by <a href="https://www.bcr-infinityarchitects.co.uk/" target="_blank">clicking here</a> (link opens in new browser tab).</p>	
+					</div>
+				</div>
+			</div>
+
+
+	</main>
+
+	<footer>
+		<div class="footer__inner">
+			<div class="container">
+				<div class="row">
+					<div class="col_12">
+						<p>&copy; David Walker 2019.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
